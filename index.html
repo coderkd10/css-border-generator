@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Border image generator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://rawgit.com/egonolieux/bootstrap-imageupload/master/dist/css/bootstrap-imageupload.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CSS Border Image Generator</h1>
+    <section id="intro">
+        <p>Want to use a single image as border in css? Well you directly can't!</p>
+        <p>For reference please see <a href="https://css-tricks.com/almanac/properties/b/border-image/#article-header-id-10">CSS-Trick : Making a Border of a Single Repeating Image</a>.</p>
+        <p>You'll have to create a "frame" of images as you'd like to appear in the border and then slice that image. Well this project will generate that frame for you, without you having to use have an image editing software like gimp/photoshop.</p>
+    </section>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Generate Border Image</h3>
+        </div>
+        <div class="panel-body">
+            <div id="error-area"></div>
+
+            <!-- bootstrap image upload -->
+            <div class="imageupload panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title pull-left">Upload Image</h3>
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default active">File</button>
+                        <button type="button" class="btn btn-default">URL</button>
+                    </div>
+                </div>
+                <div class="file-tab panel-body">
+                    <label class="btn btn-default btn-file">
+                        <span>Browse</span>
+                        <!-- The file is stored here. -->
+                        <input type="file" name="image-file">
+                    </label>
+                    <button type="button" class="btn btn-default">Remove</button>
+                </div>
+                <div class="url-tab panel-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Image URL">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default">Remove</button>
+                    <!-- The URL is stored here. -->
+                    <input type="hidden" name="image-url">
+                </div>
+            </div>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="max-width" class="control-label col-sm-4">Max Width (in px)</label>
+                    <div class="col-sm-8">
+                        <input id="max-width" type="text" class="form-control" value="20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="max-height" class="control-label col-sm-4">Max Height (in px)</label>
+                    <div class="col-sm-8">
+                        <input id="max-height" text="text" class="form-control" value="20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button type="submit" class="btn btn-primary">Generate</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/egonolieux/bootstrap-imageupload/master/dist/js/bootstrap-imageupload.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
